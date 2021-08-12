@@ -2,6 +2,35 @@
 
 This project has you building an application that lets governors of different colonies in our Solar System purchase minerals from various mining facilities that human have established.
 
+## Learning Objectives
+
+Completing the project is not your objective. Your focus is to building the following skills and deepen your knowledge of the concepts.
+
+1. Collaboration (are you helping your team succeed)
+1. Productivity (are you wasting too much time before asking for help)
+1. Data types
+1. Data structures
+1. Navigating data relationships using primary keys and foreign keys
+
+Quote from previous student...
+
+> "This project has made me realize the importance of an ERD and quality design of your data structure and how to access that data."
+
+## Wireframe
+
+This is the general layout provided by your product owner. Please follow this guideline for your project's layout.
+
+![wireframe for project](./images/wireframe.png)
+
+
+## Workflow Animation
+
+This animation shows you the basic behavior of the application.
+
+![](./images/exomine.gif)
+
+## Data Relationships
+
 Below you can ready some basic information about the properties and relationships of the data you need for this application. There are several issue tickets created that tell you how the project should function. This project has been extensively planned by your project owner, and so you must build it to those specifications. Do not deviate from the definition of the features in the issue tickets.
 
 If you need clarification about the functionality, please contact your product owner. You do not have the authority to change the intended functionality defined in the tickets.
@@ -26,8 +55,6 @@ If a mining facility is inactive, then the button in the UI should never be enab
 
 Each mining facility can produce several kinds of minerals. Each mineral type can be produced at several mining facilities.
 
-## Wireframe
+## Working Deployed Example
 
-This is the general layout provided by your product owner. Please follow this guideline for your project's layout.
-
-![wireframe for project](./images/wireframe.png)
+You can visit the [Solar Mine](https://solar-mine.onrender.com/) application that has been built and deployed as an example application. Use all of your investigative skills with the Dev Tools to glean as much information as you can.
