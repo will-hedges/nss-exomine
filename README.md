@@ -31,9 +31,7 @@ This animation shows you the basic behavior of the application.
 
 ## Data Relationships
 
-Below you can ready some basic information about the properties and relationships of the data you need for this application. There are several issue tickets created that tell you how the project should function. This project has been extensively planned by your project owner, and so you must build it to those specifications. Do not deviate from the definition of the features in the issue tickets.
-
-If you need clarification about the functionality, please contact your product owner. You do not have the authority to change the intended functionality defined in the tickets.
+Below you can ready some basic information about the properties and relationships of the data you need for this application. 
 
 ## Governors
 
