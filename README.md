@@ -59,4 +59,4 @@ Each mining facility can produce several kinds of minerals. Each mineral type ca
 
 **Do not attempt the stretch goal until you have completed the basic requirements above.**
 
-If your team would like to do more advanced state manipulations, refactor your code to allow a governor to select minerals from multiple mining facilities before finalizing the purchase. A working example done by a previous team can be seen at (https://solar-mine.onrender.com/)[https://solar-mine.onrender.com/]. 
+If your team would like to do more advanced state manipulations, refactor your code to allow a governor to select minerals from multiple mining facilities before finalizing the purchase. A working example done by a previous team can be seen at [https://solar-mine.onrender.com/](https://solar-mine.onrender.com/). 
