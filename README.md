@@ -57,12 +57,12 @@ Each mining facility can produce several kinds of minerals. Each mineral type ca
 
 There is more to algorithmic thinking than just comments for a project like this.
 
-1. The algorithm should always be done before coding. For a complex application, the algorithm is more than just writing comments
 1. Have we documented how the application UI should be structured?
-1. Do we know which HTML elements we are going to use for each component?
-1. Have we defined the CSS classes for each component?
-1. Do we know which modules need to be created, and have the responsibility documented for each one?
-1. Do we know the order in which the modules should be developed?
+2. Is our ERD complete and approved by our team lead?
+3. Do we know which HTML elements we are going to use for each component?
+4. Have we defined the CSS classes for each component?
+5. Do we know which modules need to be created, and have the responsibility documented for each one?
+6. Do we know the order in which the modules should be developed?
 
 If anyone on the team is unsure about any of these questions, it leads to uncertainty, loss of productivity, and disagreements.
 
