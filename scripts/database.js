@@ -1,4 +1,11 @@
 const database = {
+  governors:[
+    { id: 1, name: "George Simmonds", actiive: true, colonyId: 4 }, 
+    { id: 2, name: "Lisa Hartford", actiive: true, colonyId: 5 },
+    { id: 3, name: "Yoko Ono", actiive: true, colonyId: 1 },
+    { id: 4, name: "Mike Hunt", actiive: true, colonyId: 2 },
+    { id: 5, name: "Jack Dorsey", actiive: true, colonyId: 3 },
+  ],
   colonies: [
     { id: 1, name: "Earth" },
     { id: 2, name: "Mars" },
