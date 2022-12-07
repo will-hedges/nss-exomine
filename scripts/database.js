@@ -1,5 +1,19 @@
 const database = {
-    transientState: {}
+    transientState: {},
+    miningFacilities: [{
+        id: 1,
+        name: "Ganymede",
+        active: true},
+        { 
+            id: 2,
+        name:"Io",
+        active: true},
+    {
+        id: 3,
+        name:"Titan",
+        active: false
+
+    }]
 }
 
 export const setFacility = (facilityId) => {
@@ -17,4 +31,4 @@ export const purchaseMineral = () => {
         // application can re-render and update state
         document.dispatchEvent( new CustomEvent("stateChanged") )
     }
-}
+
