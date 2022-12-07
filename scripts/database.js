@@ -1,5 +1,12 @@
 const database = {
-    transientState: {},
+    minerals: [
+        {id: 1, type: "Iron"},
+        {id: 2, type: "Chromium"},
+        {id: 3, type: "Gold"},
+        {id: 4, type: "Nitra"},
+        {id: 5, type: "Plutonium"},
+    ],
+    
     miningFacilities: [{
         id: 1,
         name: "Ganymede",
@@ -13,7 +20,8 @@ const database = {
         name:"Titan",
         active: false
 
-    }]
+    }],
+    transientState: {},
 }
 
 export const setFacility = (facilityId) => {
