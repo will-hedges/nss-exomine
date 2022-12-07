@@ -1,25 +1,17 @@
 const database = {
   colonies: [
-    {
-      id: 1,
-      name: "Earth",
-    },
-    {
-      id: 2,
-      name: "Mars",
-    },
-    {
-      id: 3,
-      name: "Europa",
-    },
-    {
-      id: 4,
-      name: "Titan",
-    },
-    {
-      id: 5,
-      name: "Proteus",
-    },
+    { id: 1, name: "Earth" },
+    { id: 2, name: "Mars" },
+    { id: 3, name: "Europa" },
+    { id: 4, name: "Titan" },
+    { id: 5, name: "Proteus" },
+  ],
+  minerals: [
+    { id: 1, type: "Iron" },
+    { id: 2, type: "Chromium" },
+    { id: 3, type: "Gold" },
+    { id: 4, type: "Nitra" },
+    { id: 5, type: "Plutonium" },
   ],
   transientState: {},
 };
