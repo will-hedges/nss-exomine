@@ -17,22 +17,39 @@ const database = {
         {id: 4, type: "Nitra"},
         {id: 5, type: "Plutonium"},
     ],
+    miningFacilities: [
+        { id: 1, name: "Ganymede", active: true },
+        { id: 2, name: "Io", active: true },
+        { id: 3, name: "Titan", active: false }
+    ],
+    governors: [
+        { id: 1, name: "George Simmonds", active: true, colonyId: 4 },
+        { id: 2, name: "Lisa Hartford", active: true, colonyId: 5 },
+        { id: 3, name: "Yoko Ono", active: true, colonyId: 1 },
+        { id: 4, name: "Mike Hunt", active: true, colonyId: 2 },
+        { id: 5, name: "Jack Dorsey", active: true, colonyId: 3 },
+    ],
+    colonies: [
+        { id: 1, name: "Earth" },
+        { id: 2, name: "Mars" },
+        { id: 3, name: "Europa" },
+        { id: 4, name: "Titan" },
+        { id: 5, name: "Proteus" },
+    ],
     transientState: {}
-}
+};
 
 export const setFacility = (facilityId) => {
-    database.transientState.selectedFacility = facilityId
-    document.dispatchEvent( new CustomEvent("stateChanged") )
-}
+    database.transientState.selectedFacility = facilityId;
+    document.dispatchEvent(new CustomEvent("stateChanged"));
+};
 
 export const getFacilities = () => {
-    return database.facilities.map(f => ({...f}))
-}
+    return database.facilities.map((f) => ({ ...f }));
+};
 
 export const purchaseMineral = () => {
-
-        // Broadcast custom event to entire documement so that the
-        // application can re-render and update state
-        document.dispatchEvent( new CustomEvent("stateChanged") )
-    }
-}
+    // Broadcast custom event to entire documement so that the
+    // application can re-render and update state
+    document.dispatchEvent(new CustomEvent("stateChanged"));
+};
