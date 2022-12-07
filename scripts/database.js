@@ -1,4 +1,11 @@
 const database = {
+    minerals: [
+        {id: 1, type: "Iron"},
+        {id: 2, type: "Chromium"},
+        {id: 3, type: "Gold"},
+        {id: 4, type: "Nitra"},
+        {id: 5, type: "Plutonium"},
+    ],
     transientState: {}
 }
 
