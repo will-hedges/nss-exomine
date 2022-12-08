@@ -28,6 +28,9 @@ const database = {
         { id: 3, name: "Yoko Ono", active: true, colonyId: 1 },
         { id: 4, name: "Mike Hunt", active: true, colonyId: 2 },
         { id: 5, name: "Jack Dorsey", active: true, colonyId: 3 },
+        { id: 6, name: "Hakunna Matata", active: true, colonyId: 5},
+        { id: 7, name: "Loki Odinson", active: true, colonyId: 4},
+        { id: 8, name: "Harvey Birdman", active: true, colonyId: 2}
     ],
     colonies: [
         { id: 1, name: "Earth" },
@@ -62,7 +65,7 @@ export const getGovernors = () => {
 };
 
 export const setGovernor = (governorId) => {
-    database.transientState.selectedFacility = governorId;
+    database.transientState.selectedGovernor = governorId;
     document.dispatchEvent(new CustomEvent("stateChanged"));
 }
 
