@@ -2,6 +2,7 @@ import { Colonies } from "./Colonies.js";
 import { Facilities } from "./Facilities.js";
 import { FacilityInventories } from "./FacilityInventories.js";
 import { Governors } from "./Governors.js";
+import { SpaceCart } from "./SpaceCart.js";
 
 export const Exomine = () => {
     return `
@@ -10,6 +11,6 @@ export const Exomine = () => {
         ${Colonies()}
         ${Facilities()}
         ${FacilityInventories()}
-        <!-- space cart will go here -->
+        ${SpaceCart()}
     `;
 };
