@@ -17,7 +17,7 @@ const database = {
         { id: 4, type: "Nitra" },
         { id: 5, type: "Plutonium" },
     ],
-    miningFacilities: [
+    facilities: [
         { id: 1, name: "Ganymede", active: true },
         { id: 2, name: "Io", active: true },
         { id: 3, name: "Titan", active: false },
@@ -39,7 +39,8 @@ const database = {
     transientState: {},
 };
 
-export const getColonies = () => { return database.facilities.map((colony) => ({ ...colony }));
+export const getColonies = () => {
+    return database.colonies.map((c) => ({ ...c }));
 };
 
 export const setColony = (colonyId) => {
@@ -47,7 +48,8 @@ export const setColony = (colonyId) => {
     document.dispatchEvent(new CustomEvent("stateChanged"));
 };
 
-export const getFacilities = () => { return database.facilities.map((f) => ({ ...f }));
+export const getFacilities = () => {
+    return database.facilities.map((f) => ({ ...f }));
 };
 
 export const setFacility = (facilityId) => {
@@ -55,11 +57,17 @@ export const setFacility = (facilityId) => {
     document.dispatchEvent(new CustomEvent("stateChanged"));
 };
 
-export const getGovernors = () => {return database.governors.map(g => ({...g}))}
+export const getGovernors = () => {
+    return database.governors.map((g) => ({ ...g }));
+};
 
-export const getMinerals = () => {return database.minerals.map(m => ({...m}))}
+export const getMinerals = () => {
+    return database.minerals.map((m) => ({ ...m }));
+};
 
-export const geFacilityInventories = () => {return database.facilityInventories.map(f => ({...f}))}
+export const getFacilityInventories = () => {
+    return database.facilityInventories.map((f) => ({ ...f }));
+};
 
 export const purchaseMineral = () => {
     // Broadcast custom event to entire documement so that the
