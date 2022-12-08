@@ -36,7 +36,7 @@ const database = {
         { id: 4, name: "Titan" },
         { id: 5, name: "Proteus" },
     ],
-    transientState: {},
+    transientState: {test: "teehee"},
 };
 
 export const getColonies = () => {
@@ -73,6 +73,10 @@ export const getMinerals = () => {
 export const getFacilityInventories = () => {
     return database.facilityInventories.map((f) => ({ ...f }));
 };
+
+export const getTransientData = () => {
+    return { ...database.transientState };
+}
 
 export const purchaseMineral = () => {
     // Broadcast custom event to entire documement so that the
