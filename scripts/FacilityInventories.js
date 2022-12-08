@@ -1,4 +1,4 @@
-import { getFacilityInventories, getFacilities, get } from "./database.js";
+import { getFacilityInventories, getFacilities } from "./database.js";
 
 /* 
     code should display the minerals available at a specific facility.

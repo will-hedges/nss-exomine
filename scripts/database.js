@@ -39,7 +39,7 @@ const database = {
         { id: 4, name: "Titan" },
         { id: 5, name: "Proteus" },
     ],
-    transientState: {test: "teehee"},
+    transientState: {}
 };
 
 export const getColonies = () => {
