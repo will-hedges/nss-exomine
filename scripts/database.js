@@ -57,7 +57,6 @@ export const setFacility = (facilityId) => {
 
 export const getGovernors = () => {return database.governors.map(g => ({...g}))}
 
-
 export const getMinerals = () => {return database.minerals.map(m => ({...m}))}
 
 export const geFacilityInventories = () => {return database.facilityInventories.map(f => ({...f}))}
