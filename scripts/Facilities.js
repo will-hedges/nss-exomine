@@ -1,6 +1,6 @@
-import { getFacilities } from "./database.js";
-const facilities = getFacilities();
+import { getFacilities, setFacility } from "./database.js";
 
+const facilities = getFacilities();
 
 export const Facilities = () => {
     return `
@@ -9,7 +9,6 @@ export const Facilities = () => {
         ${convertFacilities()}
     `;
 };
-
 
 const convertFacilities = () => {
     return   `<select class="facility" id="facility">
@@ -23,3 +22,15 @@ const convertFacilities = () => {
     }
  </select>`
  }
+
+ /* 
+    add event listener for change in form
+    check if the change was in the facility select
+    return it
+*/
+document.addEventListener("change", e => {
+    const changeEvent = e.target;
+    if (changeEvent.id === "facility") {
+        setFacility(parseInt(changeEvent.value));
+    }
+});
