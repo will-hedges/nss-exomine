@@ -61,6 +61,11 @@ export const getGovernors = () => {
     return database.governors.map((g) => ({ ...g }));
 };
 
+export const setGovernor = (governorId) => {
+    database.transientState.selectedFacility = governorId;
+    document.dispatchEvent(new CustomEvent("stateChanged"));
+}
+
 export const getMinerals = () => {
     return database.minerals.map((m) => ({ ...m }));
 };
