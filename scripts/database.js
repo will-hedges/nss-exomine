@@ -61,6 +61,10 @@ export const setColony = (colonyId) => {
     document.dispatchEvent(new CustomEvent("stateChanged"));
 };
 
+export const getColonyInventories = () => {
+    return database.colonyInventories.map((inventory) => ({ ...inventory }));
+};
+
 export const getFacilities = () => {
     return database.facilities.map((f) => ({ ...f }));
 };
