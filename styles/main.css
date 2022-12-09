@@ -1,0 +1,31 @@
+.top, .bottom {
+    display: flex;
+    flex-direction: row;
+}
+
+.governor{
+    flex: 3;
+}
+.colonies, .space_cart {
+    flex: 2;
+}
+
+.facilities {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    
+}
+.facility_html {
+    flex: 1;
+}
+
+.facility_inventory{
+    flex: 3;
+    
+    
+}
+.space_cart {
+   
+    flex: 2;
+}
