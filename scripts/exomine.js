@@ -9,25 +9,27 @@ export const Exomine = () => {
         <h1>Solar System Mining Marketplace</h1>
         <div class="top">
             <div class="governor">
-            ${Governors()}
+                ${Governors()}
             </div>
             <div class="colonies">
-            ${Colonies()}
+                ${Colonies()}
+            </div>
+        </div>
+        <div class="facilities">
+            <div class="facility_html">
+                ${Facilities()}
             </div>
         </div>
         <div class="bottom">
-            <div class="facilities">
-           <div class="facility_html">
-
-                ${Facilities()}
-        </div>
-        <div class="facility_inventory">
-            ${FacilityInventories()}
-        </div>    
-        </div>
+                <div class="facility_inventory">
+                    ${FacilityInventories()}
+                </div>   
+             
+        
             <div class="space_cart">
-            ${SpaceCart()}
+                ${SpaceCart()}
             </div>
+
         </div>
     `;
 };
