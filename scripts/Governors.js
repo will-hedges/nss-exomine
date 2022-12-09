@@ -1,16 +1,15 @@
 import { getGovernors, setGovernor } from "./database.js";
 
-const governors = getGovernors()
+const governors = getGovernors();
 
 document.addEventListener("change", (event) => {
     if (event.target.id === "governor-list") {
-        setGovernor(parseInt(event.target.value))
+        setGovernor(parseInt(event.target.value));
     }
-}
-)
+});
 
 const listGovernors = () => {
-    let HTMLString = `<select id="governor-list"><option value="null">Please select a Governor</option>`
+    let HTMLString = `<select id="governor-list"><option value="null">Please select a Governor</option>`;
     for (const g of governors) {
         if(g.active === true) {
         HTMLString += `<option value="${g.id}">${g.name}</option>`
