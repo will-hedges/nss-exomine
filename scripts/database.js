@@ -23,11 +23,11 @@ const database = {
         { id: 3, name: "Titan", active: false },
     ],
     governors: [
-        { id: 1, name: "George Simmonds", active: true, colonyId: 4 },
+        { id: 1, name: "George Simmonds", active: false, colonyId: 4 },
         { id: 2, name: "Lisa Hartford", active: true, colonyId: 5 },
         { id: 3, name: "Yoko Ono", active: true, colonyId: 1 },
-        { id: 4, name: "Mike Hunt", active: true, colonyId: 2 },
-        { id: 5, name: "Jack Dorsey", active: true, colonyId: 3 },
+        { id: 4, name: "Mike Hunt", active: false, colonyId: 2 },
+        { id: 5, name: "Jack Dorsey", active: false, colonyId: 3 },
         { id: 6, name: "Hakunna Matata", active: true, colonyId: 5},
         { id: 7, name: "Loki Odinson", active: true, colonyId: 4},
         { id: 8, name: "Harvey Birdman", active: true, colonyId: 2}

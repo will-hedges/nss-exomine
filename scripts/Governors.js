@@ -12,7 +12,9 @@ document.addEventListener("change", (event) => {
 const listGovernors = () => {
     let HTMLString = `<select id="governor-list"><option value="null">Please select a Governor</option>`
     for (const g of governors) {
+        if(g.active === true) {
         HTMLString += `<option value="${g.id}">${g.name}</option>`
+    }
 }
 HTMLString += `</select>`  
 return HTMLString  
