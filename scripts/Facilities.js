@@ -14,11 +14,14 @@ const convertFacilities = () => {
     return   `<select class="facility" id="facility">
     <option value="">Choose a Facility</option>
     ${
-        facilities.map(
-            facility => {
-                return `<option value="${facility.id}--">${facility.name}</option>`
-            }
-        ).join("")
+        facilities
+            .filter( facility =>
+                facility.active )
+            .map(
+                facility => {
+                    return `<option value="${facility.id}--">${facility.name}</option>`
+                })
+            .join("")
     }
  </select>`
  }
