@@ -14,8 +14,8 @@ const listGovernors = () => {
     for (const g of governors) {
         if(g.active === true) {
         HTMLString += `<option value="${g.id}">${g.name}</option>`
-}
     }
+}
 HTMLString += `</select>`  
 return HTMLString  
 };
