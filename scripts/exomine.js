@@ -1,4 +1,5 @@
 import { Colonies } from "./Colonies.js";
+import { ColonyInventories } from "./ColonyInventories.js";
 import { Facilities } from "./Facilities.js";
 import { FacilityInventories } from "./FacilityInventories.js";
 import { Governors } from "./Governors.js";
@@ -13,6 +14,9 @@ export const Exomine = () => {
             </div>
             <div class="colonies">
                 ${Colonies()}
+                <div class="colony_inventory">
+                    ${ColonyInventories()}
+                </div>
             </div>
         </div>
         <div class="facilities">
@@ -21,15 +25,12 @@ export const Exomine = () => {
             </div>
         </div>
         <div class="bottom">
-                <div class="facility_inventory">
-                    ${FacilityInventories()}
-                </div>   
-             
-        
+            <div class="facility_inventory">
+                ${FacilityInventories()}
+            </div>   
             <div class="space_cart">
                 ${SpaceCart()}
             </div>
-
         </div>
     `;
 };

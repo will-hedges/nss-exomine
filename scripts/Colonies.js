@@ -1,4 +1,9 @@
-import { getColonies, getGovernors, getTransientData } from "./database.js";
+import {
+    getColonies,
+    getGovernors,
+    getTransientData,
+    setColony,
+} from "./database.js";
 
 const colonies = getColonies();
 const governors = getGovernors();
@@ -6,7 +11,7 @@ const governors = getGovernors();
 // if no governor is selected, display "Colony Materials"
 let colonyName = "Colony";
 
-document.addEventListener("stateChanged", (event) => {
+document.addEventListener("governorChanged", (event) => {
     const transientState = getTransientData();
     // get the governorId from transient state
     const governorId = transientState.selectedGovernor;
@@ -17,9 +22,11 @@ document.addEventListener("stateChanged", (event) => {
 
     if (governorObj) {
         // using the governor Object, find the colony with the id of the colonyId
-        colonyName = colonies.find(
+        const matchedColony = colonies.find(
             (colony) => colony.id === governorObj.colonyId
-        ).name;
+        );
+        setColony(matchedColony.id);
+        colonyName = matchedColony.name;
     } else {
         colonyName = "Colony";
     }
