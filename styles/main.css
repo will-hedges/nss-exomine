@@ -14,18 +14,24 @@
     flex: 3;
     display: flex;
     flex-direction: column;
+    align-items: center;
     
 }
 .facility_html {
     flex: 1;
+   
 }
 
 .facility_inventory{
     flex: 3;
+   
     
     
 }
 .space_cart {
    
     flex: 2;
+}
+ul {
+    list-style-type: none;
 }
