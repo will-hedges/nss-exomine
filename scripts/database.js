@@ -58,7 +58,7 @@ export const getColonies = () => {
 
 export const setColony = (colonyId) => {
     database.transientState.selectedColony = colonyId;
-    document.dispatchEvent(new CustomEvent("stateChanged"));
+    document.dispatchEvent(new CustomEvent("colonyChanged"));
 };
 
 export const getColonyInventories = () => {
@@ -80,7 +80,7 @@ export const getGovernors = () => {
 
 export const setGovernor = (governorId) => {
     database.transientState.selectedGovernor = governorId;
-    document.dispatchEvent(new CustomEvent("stateChanged"));
+    document.dispatchEvent(new CustomEvent("governorChanged"));
 };
 
 export const getMinerals = () => {
