@@ -71,7 +71,7 @@ export const getFacilities = () => {
 
 export const setFacility = (facilityId) => {
     database.transientState.selectedFacility = facilityId;
-    document.dispatchEvent(new CustomEvent("stateChanged"));
+    document.dispatchEvent(new CustomEvent("facilityChanged"));
 };
 
 export const getGovernors = () => {
