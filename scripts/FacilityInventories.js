@@ -41,8 +41,7 @@ document.addEventListener("facilityChanged", e => {
 })
 
 export const FacilityInventories = () => {
-    let html = `<h2>Facility Minerals</h2>
-                    <ul id="facilityInventories__list"></ul>`;
+    let html = `<h2>Facility Minerals</h2>\n<ul id="facilityInventories__list"></ul>`;
 
     return html;
 };
