@@ -14,6 +14,9 @@ export const Exomine = () => {
             </div>
             <div class="colonies">
                 ${Colonies()}
+                <div class="colony_inventory">
+                    ${ColonyInventories()}
+                </div>
             </div>
         </div>
         <div class="facilities">
