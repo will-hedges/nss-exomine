@@ -7,10 +7,27 @@ import { SpaceCart } from "./SpaceCart.js";
 export const Exomine = () => {
     return `
         <h1>Solar System Mining Marketplace</h1>
-        ${Governors()}
-        ${Colonies()}
-        ${Facilities()}
-        ${FacilityInventories()}
-        ${SpaceCart()}
+        <div class="top">
+            <div class="governor">
+            ${Governors()}
+            </div>
+            <div class="colonies">
+            ${Colonies()}
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="facilities">
+           <div class="facility_html">
+
+                ${Facilities()}
+        </div>
+        <div class="facility_inventory">
+            ${FacilityInventories()}
+        </div>    
+        </div>
+            <div class="space_cart">
+            ${SpaceCart()}
+            </div>
+        </div>
     `;
 };
