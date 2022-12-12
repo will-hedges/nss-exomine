@@ -87,6 +87,10 @@ export const getMinerals = () => {
     return database.minerals.map((m) => ({ ...m }));
 };
 
+export const setMineral = (mineralId) => {
+    database.transientState.selectedMineral = mineralId;
+}
+
 export const getFacilityInventories = () => {
     return database.facilityInventories.map((f) => ({ ...f }));
 };
@@ -111,6 +115,7 @@ export const getTransientData = () => {
     - if facility ID matches given facility ID, and mineral matches given mineral ID, minus one from the amount property.
     + inside mineral iteration, iterate through colony inventories.
     + if colony ID matches given colony ID, and mineral matches given mineral ID, minus one from the amount property.
+    If there is no 
     After the purchase, set transient data back to an empty object.
     Trigger event that re-renders whole page. (add event listener to main.js that invokes renderHTML function)
 */
@@ -118,5 +123,16 @@ export const getTransientData = () => {
 export const purchaseMineral = () => {
     // Broadcast custom event to entire documement so that the
     // application can re-render and update state
-    document.dispatchEvent(new CustomEvent("stateChanged"));
+    const currentFacility = getTransientData().selectedFacility;
+    const currentColony = getTransientData().selectedColony;
+    const mineral = getTransientData().selectedMineral;
+    
+
+    for (const inventory of database.facilityInventories) {
+        if (inventory.facilityId === currentFacility && inventory.mineralId === mineral) {
+            inventory.amount--;
+        }
+    }
+
+    document.dispatchEvent(new CustomEvent("inventoriesChanged"));
 };

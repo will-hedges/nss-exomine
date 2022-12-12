@@ -1,6 +1,5 @@
-import { getFacilityInventories, getTransientData, getMinerals } from "./database.js";
+import { getFacilityInventories, getTransientData, getMinerals, setMineral } from "./database.js";
 
-const facilityInventories = getFacilityInventories();
 const minerals = getMinerals();
 
 /* 
@@ -19,6 +18,7 @@ const minerals = getMinerals();
 
 document.addEventListener("facilityChanged", e => {
     const transientData = getTransientData();
+    const facilityInventories = getFacilityInventories();
     let htmlList = "";
 
     if (transientData.selectedFacility > 0) {
@@ -29,7 +29,7 @@ document.addEventListener("facilityChanged", e => {
                 for (const mineral of minerals) {
                     if (inv.mineralId === mineral.id) {
                         return `<li>
-                        <input type="radio" name="facilityInventory" value="${inv.id}" />${inv.amount} tons of ${mineral.type}
+                        <input type="radio" name="facilityInventory" value="${inv.mineralId}" />${inv.amount} tons of ${mineral.type}
                         </li>`
                     }
                 }})
@@ -45,3 +45,20 @@ export const FacilityInventories = () => {
 
     return html;
 };
+
+/* 
+    When a mineral is chosen it will set the selectedMineral property of transient state to
+    the currently selected mineral
+
+    listen for change
+    check if correct thing changed
+    call setMineral function with the value as parameter
+*/
+
+document.addEventListener("change", e => {
+    const changeEvent = e.target;
+    
+    if (changeEvent.name === "facilityInventory") {
+        setMineral(parseInt(changeEvent.value));
+    }
+});
