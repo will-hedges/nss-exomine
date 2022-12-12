@@ -8,28 +8,23 @@ import {
 
 const facilities = getFacilities();
 const minerals = getMinerals();
-const facilityInv = getFacilityInventories();
 
 document.addEventListener("click", (e) => {
-    if (e.target.name === "facilityInventory") {
-        const spaceCart = {};
-        for (const inv of facilityInv) {
-            if (inv.id === parseInt(e.target.value)) {
-                spaceCart.amount = 1;
-                for (const mineral of minerals) {
-                    if (mineral.id === inv.mineralId) {
-                        spaceCart.item = mineral.type;
-                    }
-                }
-            }
-        }
-        const transientState = getTransientData();
-        const facilityId = transientState.selectedFacility;
+    const clickEvent = e.target;
+
+    if (clickEvent.name === "facilityInventory") {
+        const facilityId = getTransientData().selectedFacility;
+
+        const spaceCart = minerals.find(mineral => 
+            mineral.id === parseInt(clickEvent.value)
+        );
+
         const facilityName = facilities.find(
             (facility) => facility.id === facilityId
         ).name;
+
         const spaceCartElem = document.querySelector("#space-cart");
-        spaceCartElem.innerHTML = `${spaceCart.amount} ton of ${spaceCart.item} from ${facilityName}`;
+        spaceCartElem.innerHTML = `1 ton of ${spaceCart.type} from ${facilityName}`;
     }
 });
 
