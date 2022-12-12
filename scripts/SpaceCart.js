@@ -1,26 +1,30 @@
-import { getTransientData, getFacilities, getMinerals, getFacilityInventories } from "./database.js";
+import {
+    getTransientData,
+    getFacilities,
+    getMinerals,
+    getFacilityInventories,
+} from "./database.js";
 
-const minerals = getMinerals()
-const facilityInv = getFacilityInventories()
+const minerals = getMinerals();
+const facilityInv = getFacilityInventories();
 
 document.addEventListener("click", (e) => {
     if (e.target.name === "facilityInventory") {
-        const spaceCart = {}
+        const spaceCart = {};
         for (const inv of facilityInv) {
             if (inv.id === parseInt(e.target.value)) {
-                spaceCart.amount = 1
+                spaceCart.amount = 1;
                 for (const mineral of minerals) {
                     if (mineral.id === inv.mineralId) {
-                        spaceCart.item = mineral.type
+                        spaceCart.item = mineral.type;
                     }
                 }
             }
         }
-        const spaceCartElem = document.querySelector("#space-cart__container");
+        const spaceCartElem = document.querySelector("#space-cart");
         spaceCartElem.innerHTML = `${spaceCart.amount} ton of ${spaceCart.item}`;
     }
-}
-)
+});
 
 export const SpaceCart = () => {
     return `
