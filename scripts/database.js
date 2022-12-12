@@ -95,6 +95,26 @@ export const getTransientData = () => {
     return { ...database.transientState };
 };
 
+/* 
+    Below will be the database side of where the purchase takes place.
+
+    We will need to look at the transient data, and get the facility ID and the colony ID.
+    Basically we will be subtracting one from the facility inventory's mineral amount, and adding one to
+    the colony inventory's amount.
+
+    HOW TO GET MINERAL ID?
+    Need to add a setMineral to the setter functions, which will add a mineralID based upon the value of the
+    radio option selected to the transient data. (invoke setter function in click event listener for radio buttons)
+
+    iterate through minerals.
+    - inside mineral iteration, iterate through facility inventories.
+    - if facility ID matches given facility ID, and mineral matches given mineral ID, minus one from the amount property.
+    + inside mineral iteration, iterate through colony inventories.
+    + if colony ID matches given colony ID, and mineral matches given mineral ID, minus one from the amount property.
+    After the purchase, set transient data back to an empty object.
+    Trigger event that re-renders whole page. (add event listener to main.js that invokes renderHTML function)
+*/
+
 export const purchaseMineral = () => {
     // Broadcast custom event to entire documement so that the
     // application can re-render and update state
