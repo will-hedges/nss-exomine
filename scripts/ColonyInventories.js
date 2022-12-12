@@ -33,6 +33,11 @@ document.addEventListener("colonyChanged", (event) => {
     colonyInventoryContainer.innerHTML = colonyInventory;
 });
 
+document.addEventListener("transientDataCleared", (event) => {
+    // clear the "colony inventory" if no colony is selected
+    document.querySelector(".colony_inventory").innerHTML = "";
+});
+
 export const ColonyInventories = () => {
     return combineColonyInventory();
 };

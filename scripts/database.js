@@ -100,3 +100,8 @@ export const purchaseMineral = () => {
     // application can re-render and update state
     document.dispatchEvent(new CustomEvent("stateChanged"));
 };
+
+export const clearTransientData = () => {
+    database.transientState = {};
+    document.dispatchEvent(new CustomEvent("transientDataCleared"));
+};

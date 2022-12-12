@@ -1,6 +1,7 @@
 import {
     getColonies,
     getGovernors,
+    clearTransientData,
     getTransientData,
     setColony,
 } from "./database.js";
@@ -29,6 +30,7 @@ document.addEventListener("governorChanged", (event) => {
         colonyName = matchedColony.name;
     } else {
         colonyName = "Colony";
+        clearTransientData();
     }
 
     const colonyHeaderElem = document.querySelector("#colony__header");
