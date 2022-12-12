@@ -49,5 +49,6 @@ document.addEventListener("click", e => {
 
     if (itemClicked.id === "purchase-button") {
         purchaseMineral();
+        document.querySelector("#space-cart").innerHTML = "";
     }
 })

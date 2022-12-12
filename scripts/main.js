@@ -14,6 +14,6 @@ const mainContainer = document.querySelector("#container");
 
 mainContainer.innerHTML = renderAllHTML();
 
-document.addEventListener("inventoriesChanged", e=> {
+document.addEventListener("inventoriesChanged", e => {
     renderPurchase();
 })

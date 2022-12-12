@@ -127,23 +127,47 @@ export const purchaseMineral = () => {
     const currentColony = getTransientData().selectedColony;
     const mineral = getTransientData().selectedMineral;
     
+    if (currentColony && currentFacility && mineral ) {
+        const checkColonies = () => {
+            for (const inventory of database.colonyInventories) {
+                if (inventory.colonyId === currentColony && inventory.mineralId === mineral) {
+                    return true;
+                }
+            }
 
-    for (const inventory of database.facilityInventories) {
-        if (inventory.facilityId === currentFacility && inventory.mineralId === mineral) {
-            inventory.amount--;
+            return false;
         }
-    }
 
-    for (const inventory of database.colonyInventories) {
-        if (inventory.colonyId === currentColony && inventory.mineralId === mineral) {
-            inventory.amount++;
+        for (const inventory of database.facilityInventories) {
+            if (inventory.facilityId === currentFacility && inventory.mineralId === mineral) {
+                inventory.amount--;
+            }
         }
-    }
 
-    document.dispatchEvent(new CustomEvent("inventoriesChanged"));
-};
+        if (checkColonies()) {
+            for (const inventory of database.colonyInventories) {
+                if (inventory.colonyId === currentColony && inventory.mineralId === mineral) {
+                    inventory.amount++;
+                }
+            }
+        } else {
+            const newId = database.colonyInventories.length + 1;
+
+            database.colonyInventories.push({
+                Id: newId,
+                colonyId: currentColony,
+                mineralId: mineral,
+                amount: 1
+            })
+        }
+
+        database.transientState.selectedMineral = 0;
+
+        document.dispatchEvent(new CustomEvent("inventoriesChanged"));
+    };
+}
 
 export const clearTransientData = () => {
     database.transientState = {};
     document.dispatchEvent(new CustomEvent("transientDataCleared"));
-};
+}
