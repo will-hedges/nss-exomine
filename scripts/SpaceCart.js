@@ -6,6 +6,7 @@ import {
     purchaseMineral
 } from "./database.js";
 
+const facilities = getFacilities();
 const minerals = getMinerals();
 const facilityInv = getFacilityInventories();
 
@@ -22,8 +23,13 @@ document.addEventListener("click", (e) => {
                 }
             }
         }
+        const transientState = getTransientData();
+        const facilityId = transientState.selectedFacility;
+        const facilityName = facilities.find(
+            (facility) => facility.id === facilityId
+        ).name;
         const spaceCartElem = document.querySelector("#space-cart");
-        spaceCartElem.innerHTML = `${spaceCart.amount} ton of ${spaceCart.item}`;
+        spaceCartElem.innerHTML = `${spaceCart.amount} ton of ${spaceCart.item} from ${facilityName}`;
     }
 });
 
