@@ -17,7 +17,7 @@ document.addEventListener("click", (e) => {
             }
         }
         const spaceCartElem = document.querySelector("#space-cart__container");
-        spaceCartElem.innerHTML = `${spaceCart.item}: ${spaceCart.amount}`;
+        spaceCartElem.innerHTML = `${spaceCart.amount} ton of ${spaceCart.item}`;
     }
 }
 )
