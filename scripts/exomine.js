@@ -7,7 +7,9 @@ import { SpaceCart } from "./SpaceCart.js";
 
 export const Exomine = () => {
     return `
+        <div class="banner">
         <h1>Solar System Mining Marketplace</h1>
+        </div>
         <div class="top">
             <div class="governor">
                 ${Governors()}
