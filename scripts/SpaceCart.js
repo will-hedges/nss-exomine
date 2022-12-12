@@ -3,6 +3,7 @@ import {
     getFacilities,
     getMinerals,
     getFacilityInventories,
+    purchaseMineral
 } from "./database.js";
 
 const facilities = getFacilities();
@@ -41,3 +42,17 @@ export const SpaceCart = () => {
         </div>
     `;
 };
+
+/* 
+    Event Listener to make purchase
+
+    when the button is clicked, run the purchase mineral function
+*/
+
+document.addEventListener("click", e => {
+    const itemClicked = e.target;
+
+    if (itemClicked.id === "purchase-button") {
+        purchaseMineral();
+    }
+})
