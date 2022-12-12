@@ -1,9 +1,13 @@
-import { getGovernors, setGovernor } from "./database.js";
+import { getGovernors, setGovernor, clearTransientData } from "./database.js";
+import { renderAllHTML } from "./main.js";
 
 const governors = getGovernors();
 
 document.addEventListener("change", (event) => {
-    if (event.target.id === "governor-list") {
+    if (event.target.id === "null") {
+        clearTransientData();
+        mainContainer.innerHTML = renderAllHTML();
+    } else {
         setGovernor(parseInt(event.target.value));
     }
 });
