@@ -4,10 +4,10 @@ import {
     getTransientData,
 } from "./database.js";
 
-const colonyInventories = getColonyInventories();
 const minerals = getMinerals();
 
 const combineColonyInventory = () => {
+    const colonyInventories = getColonyInventories();
     const transientState = getTransientData();
     const colonyId = transientState.selectedColony;
     const totalColonyInventory = [];

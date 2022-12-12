@@ -7,6 +7,7 @@ export const renderAllHTML = () => {
 
 export const renderPurchase = () => {
     document.dispatchEvent(new CustomEvent("facilityChanged"));
+    document.dispatchEvent(new CustomEvent("colonyChanged"));
 }
 
 const mainContainer = document.querySelector("#container");

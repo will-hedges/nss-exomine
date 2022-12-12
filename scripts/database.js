@@ -134,5 +134,11 @@ export const purchaseMineral = () => {
         }
     }
 
+    for (const inventory of database.colonyInventories) {
+        if (inventory.colonyId === currentColony && inventory.mineralId === mineral) {
+            inventory.amount++;
+        }
+    }
+
     document.dispatchEvent(new CustomEvent("inventoriesChanged"));
 };
