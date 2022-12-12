@@ -7,9 +7,19 @@
     flex-direction: row;
    justify-content: space-between;
 }
-
+body {
+    margin-left: 5%;
+    margin-right:5%;
+}
+.banner {
+    display: flex;
+    justify-content: center;
+    padding: 1%;
+    text-decoration: underline;
+}
 .governor{
     flex: 3;
+    padding: 5px;
 }
 .colonies {
     flex: 2;
