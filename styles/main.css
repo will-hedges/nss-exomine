@@ -1,5 +1,11 @@
 #container {
-    display: flex;
+    display: grid;
+    grid-template-areas:
+     "a a"
+     "b c"
+     "e h"
+     "g h";
+    grid-template-columns: 33% 33%;
     flex-direction: row;
     flex-wrap: wrap;
     margin-left: 10%;
@@ -8,6 +14,7 @@
 }
 
 .banner {
+    grid-area: a;
     display: flex;
     width: 100%;
     justify-content: center;
@@ -15,8 +22,7 @@
     text-decoration: underline;
 }
 .governor{
-    order: 1;
-    width: 35%;
+    grid-area: b;
     border: solid black 1px;
     display: flex;
     flex-direction: column;
@@ -24,8 +30,7 @@
     margin: 2%;
 }
 .colonies {
-    order: 2;
-    width: 35%;
+    order: 1;
     border: solid black 1px;
     display: flex;
     flex-direction: column;
@@ -34,9 +39,9 @@
 }
 
 .facilities {
-    order: 3;
+    grid-area: e;
     display: inline-flex;
-    width: 35%;
+    align-items: center;
     border: solid black 1px;
     flex-direction: column;
     align-items: center;
@@ -46,18 +51,15 @@ ul {
     list-style-type: none;
 }
 .facility_inventory{
-    justify-self: left;
-    order: 5;
+    grid-area: g;
     display: inline-flex;
-    width: 35%;
     border: solid black 1px;
     flex-direction: column;
     align-items: center;
     margin: 2%;
-}
+    }
 .space_cart {
-    order: 4;
-    width: 35%;
+    grid-area: h;
     border: solid black 1px;
     display: inline-flex;
     justify-self: flex-end-;
@@ -65,6 +67,18 @@ ul {
     align-items: center;
     margin: 2%;
 }
+.facility_html {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2%                                                          ;
+}
 select {
     margin-bottom: 2%;
+}
+h2 {
+    text-decoration: underline;
+}
+#purchase_button {
+    
 }
