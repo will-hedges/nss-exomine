@@ -4,10 +4,10 @@ import {
     getTransientData,
 } from "./database.js";
 
-const colonyInventories = getColonyInventories();
 const minerals = getMinerals();
 
 const combineColonyInventory = () => {
+    const colonyInventories = getColonyInventories();
     const transientState = getTransientData();
     const colonyId = transientState.selectedColony;
     const totalColonyInventory = [];
@@ -31,6 +31,11 @@ document.addEventListener("colonyChanged", (event) => {
     const colonyInventoryContainer =
         document.querySelector(".colony_inventory");
     colonyInventoryContainer.innerHTML = colonyInventory;
+});
+
+document.addEventListener("transientDataCleared", (event) => {
+    // clear the "colony inventory" if no colony is selected
+    document.querySelector(".colony_inventory").innerHTML = "";
 });
 
 export const ColonyInventories = () => {

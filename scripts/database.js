@@ -87,6 +87,10 @@ export const getMinerals = () => {
     return database.minerals.map((m) => ({ ...m }));
 };
 
+export const setMineral = (mineralId) => {
+    database.transientState.selectedMineral = mineralId;
+}
+
 export const getFacilityInventories = () => {
     return database.facilityInventories.map((f) => ({ ...f }));
 };
@@ -95,8 +99,74 @@ export const getTransientData = () => {
     return { ...database.transientState };
 };
 
+/* 
+    Below will be the database side of where the purchase takes place.
+
+    We will need to look at the transient data, and get the mineral ID, facility ID, and the colony ID.
+    Basically we will be subtracting one from the facility inventory's mineral amount, and adding one to
+    the colony inventory's amount.
+
+    HOW TO GET MINERAL ID?
+    Need to add a setMineral to the setter functions, which will add a mineralID based upon the value of the
+    radio option selected to the transient data. (invoke setter function in click event listener for radio buttons)
+
+    ALGORITHM
+    Get all needed transient data.
+    Define function that looks through colonyinventories for specified mineral, returns true if it does, false if it doesn't.
+    Iterate through facility inventories, check facility ID and mineral ID. If right, de-increment amount property.
+    If statement that uses the check colonies function.
+    If it returns true, looks through colony inventories, and increments amount property when it finds correct colony and mineral IDs.
+    If it returns false, adds new object to colony inventories array with accurate data, also increments ID.
+    After the purchase, set transient data back to an empty object.
+    Trigger event that re-renders inventories.
+*/
+
 export const purchaseMineral = () => {
-    // Broadcast custom event to entire documement so that the
-    // application can re-render and update state
-    document.dispatchEvent(new CustomEvent("stateChanged"));
-};
+    const currentFacility = getTransientData().selectedFacility;
+    const currentColony = getTransientData().selectedColony;
+    const mineral = getTransientData().selectedMineral;
+    
+    const checkColonies = () => {
+        for (const inventory of database.colonyInventories) {
+            if (inventory.colonyId === currentColony && inventory.mineralId === mineral) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    if (currentColony && currentFacility && mineral ) {
+        for (const inventory of database.facilityInventories) {
+            if (inventory.facilityId === currentFacility && inventory.mineralId === mineral) {
+                inventory.amount--;
+            }
+        }
+
+        if (checkColonies()) {
+            for (const inventory of database.colonyInventories) {
+                if (inventory.colonyId === currentColony && inventory.mineralId === mineral) {
+                    inventory.amount++;
+                }
+            }
+        } else {
+            const newId = database.colonyInventories.length + 1;
+
+            database.colonyInventories.push({
+                Id: newId,
+                colonyId: currentColony,
+                mineralId: mineral,
+                amount: 1
+            })
+        }
+
+        database.transientState.selectedMineral = 0;
+
+        document.dispatchEvent(new CustomEvent("inventoriesChanged"));
+    };
+}
+
+export const clearTransientData = () => {
+    database.transientState = {};
+    document.dispatchEvent(new CustomEvent("transientDataCleared"));
+}
