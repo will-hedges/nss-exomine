@@ -5,6 +5,7 @@ import {
     getTransientData,
     setColony,
 } from "./database.js";
+import { Exomine } from "./Exomine.js";
 
 const colonies = getColonies();
 const governors = getGovernors();
@@ -31,6 +32,8 @@ document.addEventListener("governorChanged", (event) => {
     } else {
         colonyName = "Colony";
         clearTransientData();
+        const mainContainer = document.querySelector("#container");
+        mainContainer.innerHTML = Exomine();
     }
 
     const colonyHeaderElem = document.querySelector("#colony__header");
