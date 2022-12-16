@@ -1,0 +1,20 @@
+body {
+    background-image: url("../images/galaxy.png");
+    background-size: auto 100vh;
+    background-position: top center;
+    background-repeat: repeat-x;
+}
+
+h1 {
+    text-shadow: 0 0 5px #fff;
+    text-align: center;
+    font-size: 3em;
+}
+
+.governor, .colonies, .facilities, .facility_inventory, .space_cart {
+    background-color: rgb(0, 0, 0, 0.75);
+    border: solid 3px #000;
+    border-radius: 5px;
+    box-shadow: 0 0 7px #fff;
+    color: #fff;
+}
