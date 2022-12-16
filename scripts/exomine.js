@@ -10,7 +10,6 @@ export const Exomine = () => {
         <div class="banner">
         <h1>Solar System Mining Marketplace</h1>
         </div>
-        <div class="top">
             <div class="governor">
                 ${Governors()}
             </div>
@@ -19,20 +18,17 @@ export const Exomine = () => {
                 <div class="colony_inventory">
                     ${ColonyInventories()}
                 </div>
-            </div>
         </div>
         <div class="facilities">
             <div class="facility_html">
                 ${Facilities()}
             </div>
         </div>
-        <div class="bottom">
             <div class="facility_inventory">
                 ${FacilityInventories()}
             </div>   
             <div class="space_cart">
                 ${SpaceCart()}
             </div>
-        </div>
-    `;
+       `;
 };
