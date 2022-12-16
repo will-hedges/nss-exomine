@@ -1,4 +1,5 @@
 @import "backgrounds.css";
+@import "margin-and-paddings.css";
 
 #container {
     display: grid;
@@ -32,6 +33,7 @@
     margin: 2%;
 }
 .colonies {
+    min-height: 125px;
     order: 1;
     border: solid black 1px;
     display: flex;
@@ -41,6 +43,7 @@
 }
 
 .facilities {
+    min-height: 75px;
     grid-area: e;
     display: inline-flex;
     align-items: center;
@@ -53,6 +56,7 @@ ul {
     list-style-type: none;
 }
 .facility_inventory{
+    min-height: 125px;
     grid-area: g;
     display: inline-flex;
     border: solid black 1px;
@@ -64,8 +68,8 @@ ul {
     grid-area: h;
     border: solid black 1px;
     display: inline-flex;
-    justify-self: flex-end-;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     margin: 2%;
 }
@@ -81,6 +85,16 @@ select {
 h2 {
     text-decoration: underline;
 }
-#purchase_button {
+
+button {
+    border: none;
+    color: #fff;
+    background-color: #233885;
+    font-size: 15px;
 }
-    
+
+button:hover {
+    background-color: #2A439E;
+    transform: scale(1.1);
+    cursor: pointer;
+}
