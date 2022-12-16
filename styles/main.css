@@ -1,3 +1,5 @@
+@import "backgrounds.css";
+
 #container {
     display: grid;
     grid-template-areas:
