@@ -27,7 +27,7 @@ document.addEventListener("facilityChanged", e => {
         htmlList = availableInventories
             .map(inv => {
                 for (const mineral of minerals) {
-                    if (inv.mineralId === mineral.id) {
+                    if (inv.mineralId === mineral.id && inv.amount > 0) {
                         return `<li>
                         <input type="radio" name="facilityInventory" value="${inv.mineralId}" />${inv.amount} tons of ${mineral.type}
                         </li>`
