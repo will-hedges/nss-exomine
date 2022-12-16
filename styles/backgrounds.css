@@ -1,10 +1,13 @@
 body {
     background-image: url("../images/galaxy.png");
-    background-size: cover;
+    background-size: auto 100vh;
+    background-position: top center;
+    background-repeat: repeat-x;
 }
 
 h1 {
     text-shadow: 0 0 5px #fff;
+    text-align: center;
     font-size: 3em;
 }
 
